@@ -7,6 +7,7 @@ from langchain.vectorstores import Chroma
 from langchain.prompts import FewShotPromptTemplate
 from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
 from langchain.prompts.prompt import PromptTemplate
+import streamlit as st
 
 from few_shots import few_shots
 
@@ -14,6 +15,11 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+st.write(
+    "Has environment variables been set:",
+    os.environ["GOOGLE_API_KEY"] == st.secrets["GOOGLE_API_KEY"],
+    os.environ["DB_PASSWORD"] == st.secrets["DB_PASSWORD"],
+)
 
 def get_few_shot_db_chain():
     db_user = "sql12706690"
@@ -22,7 +28,8 @@ def get_few_shot_db_chain():
     db_name = "sql12706690"
     db_port = 3306
 
-    db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}",sample_rows_in_table_info=3)
+    db = SQLDatabase.from_uri("mysql+pymysql://" + db_user + ":" + os.environ["DB_PASSWORD"] + "@" + db_host + ":" + str(db_port) + "/" + db_name, sample_rows_in_table_info=3)
+
     llm = GooglePalm(google_api_key=os.environ["GOOGLE_API_KEY"], temperature=0.1)
 
     mysql_prompt = """You are a MySQL expert. Given an input question, first create a syntactically correct MySQL query to run, then look at the results of the query and return the answer to the input question.
