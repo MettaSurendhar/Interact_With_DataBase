@@ -66,10 +66,10 @@ streamlit run main.py
 
 ## Sample Images
 
-![./images/img1.png](img1.png)
-![./images/img2.png](img2.png)
-![./images/img3.png](img3.png)
-![./images/img4.png](img4.png)
+![https://github.com/MettaSurendhar/Met-Interact/blob/main/images/img1.png](img1.png)
+![https://github.com/MettaSurendhar/Met-Interact/blob/main/images/img2.png](img2.png)
+![https://github.com/MettaSurendhar/Met-Interact/blob/main/images/img3.png](img3.png)
+![https://github.com/MettaSurendhar/Met-Interact/blob/main/images/img4.png](img4.png)
 
 ## Project Structure
 
