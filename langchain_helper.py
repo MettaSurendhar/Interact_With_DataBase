@@ -1,12 +1,8 @@
 from langchain.llms import GooglePalm
 from langchain.utilities import SQLDatabase
 from langchain_experimental.sql import SQLDatabaseChain
-from langchain.prompts import SemanticSimilarityExampleSelector, PromptTemplate
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.prompts import FewShotPromptTemplate
-from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
-from langchain.prompts.prompt import PromptTemplate
+from langchain.prompts import FewShotPromptTemplate, PromptTemplate
+from langchain.chains.sql_database.prompt import PROMPT_SUFFIX
 import streamlit as st
 
 from few_shots import few_shots
@@ -23,7 +19,6 @@ st.write(
 
 def get_few_shot_db_chain():
     db_user = "sql12706690"
-    db_password = "qHv63da6Qu"
     db_host = "sql12.freesqldatabase.com"
     db_name = "sql12706690"
     db_port = 3306

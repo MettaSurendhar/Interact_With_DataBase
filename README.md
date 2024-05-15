@@ -17,10 +17,8 @@
 - Their inventory, sales and discounts data is stored in a MySQL database
 - We will build an LLM based question and answer system that will use following,
   - Google Palm LLM
-  - Hugging face embeddings
   - Streamlit for UI
   - Langchain framework
-  - Chromadb as a vector store
   - Few shot learning
 - In the UI, store manager will ask questions in a natural language and it will produce the answers
 
