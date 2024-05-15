@@ -1,7 +1,7 @@
 from langchain.llms import GooglePalm
 from langchain.utilities import SQLDatabase
 from langchain_experimental.sql import SQLDatabaseChain
-from langchain.prompts import SemanticSimilarityExampleSelector
+from langchain.prompts import SemanticSimilarityExampleSelector, PromptTemplate
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.prompts import FewShotPromptTemplate
@@ -16,13 +16,13 @@ load_dotenv()
 
 
 def get_few_shot_db_chain():
-    db_user = "root"
-    db_password = "Suren%4019_2004"
-    db_host = "localhost"
-    db_name = "atliq_tshirts"
+    db_user = "sql12706690"
+    db_password = "qHv63da6Qu"
+    db_host = "sql12.freesqldatabase.com"
+    db_name = "sql12706690"
+    db_port = 3306
 
-    db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}",
-                              sample_rows_in_table_info=3)
+    db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}",sample_rows_in_table_info=3)
     llm = GooglePalm(google_api_key=os.environ["GOOGLE_API_KEY"], temperature=0.1)
 
     mysql_prompt = """You are a MySQL expert. Given an input question, first create a syntactically correct MySQL query to run, then look at the results of the query and return the answer to the input question.
