@@ -11,11 +11,6 @@
 
   The system is intelligent enough to generate accurate queries for given question and execute them on MySQL database
 
-![](img1.png)
-![](img1.png)
-![](img1.png)
-![](img1.png)
-
 ## Project Highlights
 
 - Met-Interact is a t shirt store that sells Adidas, Nike, Van Heusen and Levi's t shirts
@@ -68,6 +63,13 @@ streamlit run main.py
 - How many t-shirts do we have left for Nike in XS size and white color?
 - How much is the total price of the inventory for all S-size t-shirts?
 - How much sales amount will be generated if we sell all small size adidas shirts today after discounts?
+
+## Sample Images
+
+![./images/img1.png](img1.png)
+![./images/img2.png](img2.png)
+![./images/img3.png](img3.png)
+![./images/img4.png](img4.png)
 
 ## Project Structure
 
