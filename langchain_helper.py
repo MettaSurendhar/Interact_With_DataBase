@@ -13,11 +13,8 @@ load_dotenv()
 
 # comment the marked snippet if using env file for secrets
 #----------------------------------- 
-st.write(
-    "Has environment variables been set:",
-    os.environ["GOOGLE_API_KEY"] == st.secrets["GOOGLE_API_KEY"],
-    os.environ["DB_PASSWORD"] == st.secrets["DB_PASSWORD"],
-)
+os.environ["GOOGLE_API_KEY"] == st.secrets["GOOGLE_API_KEY"]
+os.environ["DB_PASSWORD"] == st.secrets["DB_PASSWORD"]
 #-------------------------------------------
 
 def get_few_shot_db_chain():
